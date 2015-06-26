@@ -1,50 +1,114 @@
-<song>
-	<title>Attenti al lupo</title>
-	<artist>Lucio Dalla</artist>
-	<keys>forme alterate, comprensione, lessico</keys>
-	<text>
-		C'è una casetta piccola così,
-		con tante finestrelle colorate,
-		e una donnina piccola così,
-		con due occhi grandi per guardare,
-		e c'è un omino piccolo così,
-		che torna sempre tardi da lavorare,
-		e ha un cappello piccolo così,
-		con dentro un sogno da realizzare,
-		e più ci pensa più non sa aspettare.
+<songs>
+	<song>
+		<title>Attenti al lupo</title>
+		<artist>Lucio Dalla</artist>
+		<key>forme alterate</key>
+		<key>comprensione</key>
+		<key>lessico</key>
+		<text>
+			C'è una casetta piccola così,
+			con tante finestrelle colorate,
+			e una donnina piccola così,
+			con due occhi grandi per guardare,
+			e c'è un omino piccolo così,
+			che torna sempre tardi da lavorare,
+			e ha un cappello piccolo così,
+			con dentro un sogno da realizzare,
+			e più ci pensa più non sa aspettare.
 
-		Amore mio non devi stare in pena,
-		questa vita è una catena,
-		qualche volta fa un po' male,
-		guarda come son tranquilla io
-		anche se attraverso il bosco
-		con l'aiuto del buon Dio,
-		stando sempre attenta al lupo.
+			Amore mio non devi stare in pena,
+			questa vita è una catena,
+			qualche volta fa un po' male,
+			guarda come son tranquilla io
+			anche se attraverso il bosco
+			con l'aiuto del buon Dio,
+			stando sempre attenta al lupo.
 
-		Attenti al lupo. Attenti al lupo.
+			Attenti al lupo. Attenti al lupo.
 
-		Living together. Living together.
+			Living together. Living together.
 
-		Laggiù c'è un prato piccolo così
-		con un gran rumore di cicale,
-		e un profumo dolce e piccolo così,
-		amore mio è arrivata l'estate, amore mio è arrivata l'estate
-		e noi due qui distesi a far l'amore
-		in mezzo a questo mare di cicale,
-		questo amore piccolo così
-		ma tanto grande che mi sembra di volare,
-		e più ci penso più non so aspettare.
+			Laggiù c'è un prato piccolo così
+			con un gran rumore di cicale,
+			e un profumo dolce e piccolo così,
+			amore mio è arrivata l'estate, amore mio è arrivata l'estate
+			e noi due qui distesi a far l'amore
+			in mezzo a questo mare di cicale,
+			questo amore piccolo così
+			ma tanto grande che mi sembra di volare,
+			e più ci penso più non so aspettare.
 
-		Amore mio non devi stare in pena,
-		questa vita è una catena,
-		qualche volta fa un po' male,
-		guarda come son tranquilla io
-		anche se attraverso il bosco
-		con l'aiuto del buon Dio,
-		stando sempre attenta al lupo.
+			Amore mio non devi stare in pena,
+			questa vita è una catena,
+			qualche volta fa un po' male,
+			guarda come son tranquilla io
+			anche se attraverso il bosco
+			con l'aiuto del buon Dio,
+			stando sempre attenta al lupo.
 
-		Attenti al lupo. Attenti al lupo.
+			Attenti al lupo. Attenti al lupo.
 
-		Living together. Living together
-	</text>
-</song>
+			Living together. Living together
+		</text>
+	</song>
+	<song>
+		<title>La canzone del sole</title>
+		<artist>Lucio Battisti</artist>
+		<key>aggettivi</key>
+		<key>verbi</key>
+		<key>preposizioni</key>
+		<key>comprensione</key>
+		<text>
+			Le bionde trecce gli occhi azzurri e poi 
+			le tue calzette rosse 
+			e l'innocenza sulle gote tue 
+			due arance ancor più rosse 
+			e la cantina buia dove noi 
+			respiravamo piano 
+			e le tue corse, l'eco dei tuoi no, oh no 
+			mi stai facendo paura. 
+			Dove sei stata cos'hai fatto mai? 
+			Una donna, donna dimmi 
+			cosa vuol dir sono una donna ormai. 
+			Ma quante braccia ti hanno stretto, tu lo sai 
+			per diventar quel che sei 
+			che importa tanto tu non me lo dirai, purtroppo. 
+			Ma ti ricordi l'acqua verde e noi 
+			le rocce, bianco il fondo 
+			di che colore sono gli occhi tuoi 
+			se me lo chiedi non rispondo. 
+			O mare nero, o mare nero, o mare ne... 
+			tu eri chiaro e trasparente come me 
+			o mare nero, o mare nero, o mare ne... 
+			tu eri chiaro e trasparente come me. 
+			Le biciclette abbandonate sopra il prato e poi 
+			noi due distesi all'ombra 
+			un fiore in bocca può servire, sai 
+			più allegro tutto sembra 
+			e d'improvviso quel silenzio fra noi 
+			e quel tuo sguardo strano 
+			ti cade il fiore dalla bocca e poi 
+			oh no, ferma, ti prego, la mano. 
+			Dove sei stata cos'hai fatto mai? 
+			Una donna, donna, donna dimmi 
+			cosa vuol dir sono una donna ormai. 
+			Io non conosco quel sorriso sicuro che hai 
+			non so chi sei, non so più chi sei 
+			mi fai paura oramai, purtroppo. 
+			Ma ti ricordi le onde grandi e noi 
+			gli spruzzi e le tue risa 
+			cos'è rimasto in fondo agli occhi tuoi 
+			la fiamma è spenta o è accesa? 
+			O mare nero, o mare nero, o mare ne... 
+			tu eri chiaro e trasparente come me 
+			o mare nero, o mare nero, o mare ne... 
+			tu eri chiaro e trasparente come me. 
+			Il sole quando sorge, sorge piano e poi 
+			la luce si diffonde tutto intorno a noi 
+			le ombre ed i fantasmi della notte sono alberi
+			e cespugli ancora in fiore 
+			sono gli occhi di una donna 
+			ancora piena d'amore.
+		</text>
+	</song>
+</songs>
