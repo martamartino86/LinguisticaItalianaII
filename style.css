@@ -1,0 +1,48 @@
+html,body {
+	min-height: 100%;
+	overflow: hidden;
+}
+
+body { 
+ 	color: #FFFFFF;
+	background-image: url(hands-music-musician-piano.jpeg);
+ 	background-repeat: no-repeat;
+  	background-size: cover;
+}
+
+a:link, a:visited, a:hover, a:active  {
+	color: #FFFFFF;
+	text-decoration: underline;
+}
+
+.intro {
+	top: 100%;
+	left: 100%;
+	margin-top: 10%;
+	text-align: center;
+	font:5em "Tahoma", bold;
+}
+
+.sottotitolo {
+	top: 100%;
+	left: 100%;
+	text-align: center;
+	font:1em "Tahoma", bold;
+}
+
+form {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin-top: 5%;
+	transform: translate(-50%, -50%);
+}
+
+#bottom {
+	position: fixed;
+	top: 95%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font: 0.7em "Tahoma", cursive;
+	text-align: center;
+}
