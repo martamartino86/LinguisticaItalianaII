@@ -86,8 +86,8 @@ form {
 }
 
 .left {
-	float: left;
-	width: 300;
+	width: 800px;
+	height: 400px;
 	background-color: white;
 	position: fixed;
 	top: 25%;
@@ -96,5 +96,19 @@ form {
 }
 
 #wiki {
+	float: left;
+	width: 100%;
 	font: 0.7em "Tahoma";
+	padding: 5px;
+}
+
+#player {
+
+#my-video {
+	position: fixed;
+	float: right;
+}
+
+.right {
+	float: right;
 }

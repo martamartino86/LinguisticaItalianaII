@@ -1,6 +1,5 @@
 var radice;
 var songstruct = [];
-//var keysPositions = []; // HA SENSO? PENSACI...
 var file = "songs.xml";
 
 // DEBUG
@@ -22,14 +21,16 @@ function Song() {
    this.id;
    this.artist;
    this.title;
+   //this.video;
    this.keys = [];
-   this.text;
+   //this.text;
 
    this.inizializza = function(xmlsong) {
       this.id = generateId();
       this.artist = xmlsong.getElementsByTagName("artist")[0].firstChild.nodeValue;
       this.title  = xmlsong.getElementsByTagName("title")[0].firstChild.nodeValue;
-      this.text   = xmlsong.getElementsByTagName("text")[0].firstChild.nodeValue;
+      //this.video  = xmlsong.getElementsByTagName("video")[0].firstChild.nodeValue;
+      //this.text   = xmlsong.getElementsByTagName("text")[0].firstChild.nodeValue;
       var chiavi  = xmlsong.getElementsByTagName("key");
       for (var i = 0; i < chiavi.length; i++) {
          this.keys[i] = chiavi[i].firstChild.nodeValue;
@@ -42,9 +43,6 @@ function Song() {
             console.log("aggiungo chiave "+this.keys[i]+" e primo elemento")
             var elem = {key: this.keys[i], songs: new Array(this)};
             songstruct.push(elem);
-            // la aggiungo anche al dizionario delle chiavi
-            // var keypos =  {key: this.keys[i], pos_songstruct: i}
-            // keysPositions.push(keypos);
          }
          else {
             console.log(this.keys[i]+" esiste già")
@@ -137,11 +135,13 @@ $("document").ready(function(){
                   // lo devo mostrare nel div solo se non l'ho ancora mostrato nei risultati
                   if ($.inArray(songstruct[pos].songs[i].id, foundSongs) == -1) {
                      foundSongs.push(songstruct[pos].songs[i].id);
+                     var id     = songstruct[pos].songs[i].id;
                      var artist = songstruct[pos].songs[i].artist;
                      var title  = songstruct[pos].songs[i].title;
                      s = artist + " - " + title + " <br> " ;
                      //var pagelink = "<a href=\"" + (artist.replace(/ /g,'')) + (title.replace(/ /g,'')) + ".html\">" + s + "</a>";
-                     var pagelink = "<a href=\"searchresults.html?artist=" + (artist.replace(/ /g,'_')) + "&title=" +  (title.replace(/ /g,'_')) + "\">" + s + "</a>";
+                     var pagelink =
+                        "<a href=\"searchresults.html?id=" + id + "&artist=" + (artist.replace(/ /g,'_')) + "&title=" +  (title.replace(/ /g,'_')) + "\">" + s + "</a>";
                      $("#results").append(pagelink);
                   }
                }
