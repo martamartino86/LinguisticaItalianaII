@@ -4,14 +4,15 @@ html,body {
 }
 
 body { 
- 	color: #FFFFFF;
+ 	color: white;
+ 	font-family: "Tahoma";
 	background-image: url(hands-music-musician-piano.jpeg);
  	background-repeat: no-repeat;
   	background-size: cover;
 }
 
 a:link, a:visited, a:hover, a:active  {
-	color: #FFFFFF;
+	color: white;
 	text-decoration: underline;
 }
 
@@ -38,11 +39,62 @@ form {
 	transform: translate(-50%, -50%);
 }
 
-#bottom {
+#nota {
+	position: fixed;
+	top: 65%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font: 0.7em "Tahoma";
+	font-weight: bold;
+	text-align: center;
+}
+
+#results {
+	background-color: white;
+	color: black;
+	position: fixed;
+	top: 75%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font: 0.8em "Tahoma";
+	padding-top: 2px;
+	padding-right: 2px;
+	padding-bottom: 2px;
+	padding-left: 2px;
+}
+
+#results a:link, #results a:visited {
+	color: black;
+}
+
+.bottom {
 	position: fixed;
 	top: 95%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	font: 0.7em "Tahoma", cursive;
+	font: 0.7em "Tahoma";
 	text-align: center;
+}
+
+.container {
+	background-color: white;
+	color: black;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.left {
+	float: left;
+	width: 300;
+	background-color: white;
+	position: fixed;
+	top: 25%;
+	left: 25%;
+	transform: translate(-50%, -50%);
+}
+
+#wiki {
+	font: 0.7em "Tahoma";
 }
