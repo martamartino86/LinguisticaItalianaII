@@ -83,7 +83,7 @@ form {
 }
 
 .left {
-	width: 50%;
+	width: 49%;
 	height: 100%;
 	float: left;
 	margin: 0 auto;
@@ -101,7 +101,7 @@ iframe {
 	overflow: auto;
 	float: right;
 	background-color: whitesmoke;
-	width: 50%;
+	width: 49%;
 	height: 90%;
 	font: 0.7em "Tahoma";
 }
@@ -111,6 +111,7 @@ iframe {
 	width: 100%;
 	height: 10%;
 	font: 1em "Tahoma";
+	padding-left: 2px;
 }
 
 .richiesta {
@@ -120,12 +121,15 @@ iframe {
 	font: 1em "Tahoma";
 	font-weight: bold;
 	text-align: center;
+	padding-left: 2px;
 }
 
 .eser {
 	width: 100%;
 	height: 85%;
 	font: 1em "Tahoma";
+	padding-left: 2px;
+	padding-right: 2px;
 }
 
 #wiki {

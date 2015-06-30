@@ -149,8 +149,24 @@ $("document").ready(function (){
 		$(".eser").empty();
 		$(".richiesta").empty();
 		$(".richiesta").append("Ascolta la canzone, e riempi gli spazi bianchi con gli aggettivi.")
-		esercizioSostituzione("aggettivi");
-		$(".eser").append(chosenSong.text);	
+		var testoTemp = esercizioSostituzione("aggettivi");
+		$(".eser").append(testoTemp);	
+	});
+
+	$("input:radio[id='verbi']").change(function() {
+		$(".eser").empty();
+		$(".richiesta").empty();
+		$(".richiesta").append("Ascolta la canzone, e riempi gli spazi bianchi con i verbi.")
+		var testoTemp = esercizioSostituzione("verbi");
+		$(".eser").append(testoTemp);	
+	});
+
+	$("input:radio[id='preposizioni']").change(function() {
+		$(".eser").empty();
+		$(".richiesta").empty();
+		$(".richiesta").append("Ascolta la canzone, e riempi gli spazi bianchi con le preposizioni.")
+		var testoTemp = esercizioSostituzione("preposizioni");
+		$(".eser").append(testoTemp);	
 	});
 
 });
@@ -162,7 +178,7 @@ function esercizioSostituzione(keyclass) {
 	testoTemp = chosenSong.text;
 	startPos = (testoTemp).indexOf("<key class=\"" + keyclass + "\">");
 	while (startPos != -1) {
-		var endPos   = (testoTemp).indexOf("</key>") + 6;
+		var endPos   = (testoTemp).indexOf("</key>", startPos) + 6;
 		var substr   = (testoTemp).substring(startPos, endPos);
 		console.log(substr)
 		testoTemp = (testoTemp).replace(substr, "____________");
