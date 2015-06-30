@@ -30,26 +30,12 @@ function Song() {
 	    this.id = generateId();
 	    this.artist = xmlsong.getElementsByTagName("artist")[0].firstChild.nodeValue;
 	    this.title  = xmlsong.getElementsByTagName("title")[0].firstChild.nodeValue;
-	    this.video  = xmlsong.getElementsByTagName("video")[0].firstChild.nodeValue;
-	    this.text   = xmlsong.getElementsByTagName("text")[0].firstChild.nodeValue;
-	    var chiavi  = xmlsong.getElementsByTagName("key");
+	    this.video  = (xmlsong.getElementsByTagName("video")[0].firstChild.nodeValue).replace("watch?v=", "v/");
+	    this.text   = xmlsong.getElementsByTagName("text")[0].innerHTML;
+	    var chiavi  = xmlsong.getElementsByTagName("keys");
 	    for (var i = 0; i < chiavi.length; i++) {
 	       this.keys[i] = chiavi[i].firstChild.nodeValue;
 	    }
-	      // per ogni chiave della canzone, devo controllare se esiste già in songstruct ed inserirla dove serve
-	      // for (var i = 0; i < this.keys.length; i++) {
-	      //    console.log(this.keys[i]);
-	      //    var pos = (containsKey(this.keys[i]));
-	      //    if (pos == -1) {
-	      //       console.log("aggiungo chiave "+this.keys[i]+" e primo elemento")
-	      //       var elem = {key: this.keys[i], songs: new Array(this)};
-	      //       songstruct.push(elem);
-	      //    }
-	      //    else {
-	      //       console.log(this.keys[i]+" esiste già")
-	      //       songstruct[pos].songs.push(this);
-	      //    }
-	      // }
 	    return this;
    }
 
@@ -88,7 +74,7 @@ $("document").ready(function (){
 	var address = window.location.href;
 	var id      = address.substring(address.lastIndexOf('id=')+3, address.lastIndexOf('&artist'));
 	var artist  = address.substring(address.lastIndexOf('artist=')+7, address.lastIndexOf('&'));
-	var title   = address.substring(address.lastIndexOf('title=')+6); //replace(/_/g,' ');
+	var title   = address.substring(address.lastIndexOf('title=')+6);
 
 	// estrai dall'xml la canzone che interessa
 	radice = caricaXML(file);
@@ -110,96 +96,79 @@ $("document").ready(function (){
     }
 
     debug = chosenSong;
-
 	// gestisci Wikipedia
 	$.get("https://it.wikipedia.org/w/api.php?action=query&format=json&prop=extracts&exintro=explaintest=&titles=" + artist,
 		function(data, status) {
 			var extractInfo;
 			for (var i in data.query.pages)
 				extractInfo = data.query.pages[i].extract;
-			$("#wiki").append(extractInfo);
+			$("#wiki").append("<b>(Tratto da <a href\"=www.wikipedia.it\">Wikipedia</a>)</b> " + extractInfo);
 	});
 
 	// gestisci Youtube
-	$('video,audio').mediaelementplayer({
-		success: function (mediaElement, domObject) {  
-        // add event listener
-	        mediaElement.addEventListener('timeupdate', function(e) {   
-	            document.getElementById('current-time').innerHTML = mediaElement.currentTime;
-	        }, false);
-	        // call the play method
-	        mediaElement.play();
-	    }
-    });
-	$("embed").attr("src", chosenSong.video)
-	$("source").attr("src", chosenSong.video)
+	$("#player").append("<iframe width=\"420\" height=\"315\" src='"+chosenSong.video+"' frameborder=\"0\" allowfullscreen></iframe>");
 
-	// $("#my-video").attr("src", chosenSong.video)
+	// gestisci esercizi
+	$(".sceltaEser").append("<br>Scegli l'esercizio da mostrare in base alle attività di interesse:<br>");
+	for (var i = 0; i < chosenSong.keys.length; i++) {
+		var checkbox = document.createElement('input');
+		checkbox.type = "radio";
+		checkbox.name = "menuEserc";
+		checkbox.id = chosenSong.keys[i];
+		var label = document.createElement('label')
+		label.htmlFor = "id";
+		label.appendChild(document.createTextNode(chosenSong.keys[i]));
+		$(".sceltaEser").append(checkbox);
+		$(".sceltaEser").append(label);
+	}
+	$(".eser").append("<br><br><br>");
 
-	// function playthevideo(){
-	// 	var myPlayer = document.getElementById('my-video');
-	// 	myPlayer.playVideo();
-	// }
-	// function stopthevideo(){
-	// 	var myPlayer = document.getElementById('my-video');
-	// 	myPlayer.stopVideo();
-	// }
+	// HANDLER RADIO BUTTONS
+	$("input:radio[id='forme alterate']").change(function() {
+		$(".eser").empty();
+		$(".richiesta").empty();
+		$(".richiesta").append("Riempi gli spazi bianchi: le parole mancanti sono tutti diminutivi o vezzeggiativi (le cosiddette forme alterate: bellino, piccolino, …).")
+		var testoTemp = esercizioSostituzione("forme alterate");
+		$(".eser").append(testoTemp);	
+	})
 
-	// function pausethevideo(){
-	// 	var myPlayer = document.getElementById('my-video'); 
-	// 	myPlayer.pauseVideo();
-	// }
+	$("input:radio[id='comprensione']").change(function() {
+		var file = "";
+		var eserciziocomprensione;
+		$(".richiesta").empty();
+		$(".eser").empty();
+		$(".richiesta").append("Rispondi alle domande.");
+		var file = title;
+		$(".eser").load(file+"-comprensione.html", function(data){
+			eserciziocomprensione = data; 
+		});
+		$(".eser").append(eserciziocomprensione);
+	})
 
- 
+	$("input:radio[id='aggettivi']").change(function() {
+		$(".eser").empty();
+		$(".richiesta").empty();
+		$(".richiesta").append("Ascolta la canzone, e riempi gli spazi bianchi con gli aggettivi.")
+		esercizioSostituzione("aggettivi");
+		$(".eser").append(chosenSong.text);	
+	});
+
 });
 
-
-
-
-
-
-// 2. This code loads the IFrame Player API code asynchronously.
- //    var tag = document.createElement('script');
-
- //    tag.src = "https://www.youtube.com/iframe_api";
- //    var firstScriptTag = document.getElementsByTagName('script')[0];
- // 	firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
- // 	// 3. This function creates an <iframe> (and YouTube player)
- //    //    after the API code downloads.
- //    var player;
- //    function onYouTubeIframeAPIReady() {
-	//     player = new YT.Player('player', {
-	//     	height: '390',
-	//     	width: '640',
-	//     	videoId: 'M7lc1UVf-VE',
-	//     	events: {
-	//     		'onReady': onPlayerReady,
-	//         	'onStateChange': onPlayerStateChange
-	//       	}
- //    	});
- //  	}
-
- //    // 4. The API will call this function when the video player is ready.
- //    function onPlayerReady(event) {
- //    	event.target.playVideo();
- //    }
-
- //    // 5. The API calls this function when the player's state changes.
- //    //    The function indicates that when playing a video (state=1),
- //    //    the player should play for six seconds and then stop.
- //    var done = false;
- //    function onPlayerStateChange(event) {
-	//     if (event.data == YT.PlayerState.PLAYING && !done) {
-	//     	setTimeout(stopVideo, 6000);
-	//       	done = true;
- //   		}
- //  	}
- //  	function stopVideo() {
- //    	player.stopVideo();
- //    }
-	
-	// //meh
-	// $.get(chosenSong.video, function(data, status) {
-	// 	debug = data;
-	// })
+function esercizioSostituzione(keyclass) {
+	var startPos = 0;
+	var endPos   = 0;
+	console.log("<key class=\"" + keyclass + "\">")
+	testoTemp = chosenSong.text;
+	startPos = (testoTemp).indexOf("<key class=\"" + keyclass + "\">");
+	while (startPos != -1) {
+		var endPos   = (testoTemp).indexOf("</key>") + 6;
+		var substr   = (testoTemp).substring(startPos, endPos);
+		console.log(substr)
+		testoTemp = (testoTemp).replace(substr, "____________");
+		// ricomincio a cercare
+		startPos = (testoTemp).indexOf("<key class=\"" + keyclass + "\">");
+	}
+	testoTemp = (testoTemp).replace(/(?:\r\n|\r|\n)/g, '<br />');
+	return testoTemp;
+}

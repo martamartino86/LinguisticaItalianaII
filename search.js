@@ -31,7 +31,7 @@ function Song() {
       this.title  = xmlsong.getElementsByTagName("title")[0].firstChild.nodeValue;
       //this.video  = xmlsong.getElementsByTagName("video")[0].firstChild.nodeValue;
       //this.text   = xmlsong.getElementsByTagName("text")[0].firstChild.nodeValue;
-      var chiavi  = xmlsong.getElementsByTagName("key");
+      var chiavi  = xmlsong.getElementsByTagName("keys");
       for (var i = 0; i < chiavi.length; i++) {
          this.keys[i] = chiavi[i].firstChild.nodeValue;
       }
@@ -139,7 +139,6 @@ $("document").ready(function(){
                      var artist = songstruct[pos].songs[i].artist;
                      var title  = songstruct[pos].songs[i].title;
                      s = artist + " - " + title + " <br> " ;
-                     //var pagelink = "<a href=\"" + (artist.replace(/ /g,'')) + (title.replace(/ /g,'')) + ".html\">" + s + "</a>";
                      var pagelink =
                         "<a href=\"searchresults.html?id=" + id + "&artist=" + (artist.replace(/ /g,'_')) + "&title=" +  (title.replace(/ /g,'_')) + "\">" + s + "</a>";
                      $("#results").append(pagelink);
@@ -147,11 +146,9 @@ $("document").ready(function(){
                }
             }
             else 
-               $("#results").append("Nessun risultato trovato.");
+               $("#results").append("Nessun risultato trovato.<br>");
          }
          $("#results").css("visibility","visible");
-         
-         //window.location.href = "searchresults.html";
          return false;
       }
       return false; // prevent the button click from happening
