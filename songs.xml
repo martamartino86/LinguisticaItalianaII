@@ -16,7 +16,7 @@ e ha un cappello piccolo così,
 con dentro un sogno da realizzare,
 e più ci pensa più non sa aspettare.
 
-Amore mio non devi stare in pena,
+<key class="lessico">Amore</key> mio non devi stare in pena,
 questa vita è una catena,
 qualche volta fa un po' male,
 guarda come son tranquilla io
@@ -28,21 +28,21 @@ Attenti al lupo. Attenti al lupo.
 
 Living together. Living together.
 
-Laggiù c'è un prato piccolo così
+Laggiù c'è un prato <key class="lessico">piccolo</key> così
 con un gran rumore di cicale,
 e un profumo dolce e piccolo così,
 amore mio è arrivata l'estate, amore mio è arrivata l'estate
 e noi due qui distesi a far l'amore
 in mezzo a questo mare di cicale,
 questo amore piccolo così
-ma tanto grande che mi sembra di volare,
+ma tanto <key class="lessico">grande</key> che mi sembra di volare,
 e più ci penso più non so aspettare.
 
 Amore mio non devi stare in pena,
 questa vita è una catena,
 qualche volta fa un po' male,
 guarda come son tranquilla io
-anche se attraverso il bosco
+anche se attraverso il <key class="lessico">bosco</key>
 con l'aiuto del buon Dio,
 stando sempre attenta al lupo.
 
@@ -79,7 +79,7 @@ se me lo chiedi non rispondo.
 O mare <key class="aggettivi">nero</key>, o mare <key class="aggettivi">nero</key>, o mare ne... 
 tu eri <key class="aggettivi">chiaro</key> e <key class="aggettivi">trasparente</key> come me 
 o mare <key class="aggettivi">nero</key>, o mare <key class="aggettivi">nero</key>, o mare ne... 
-tu eri <key class="aggettivi">chiaro</key> e <key class="aggettivi">trasparente</key> come me . 
+tu eri <key class="aggettivi">chiaro</key> e <key class="aggettivi">trasparente</key> come me. 
 Le biciclette abbandonate <key class="preposizioni">sopra</key> il prato e poi 
 noi due distesi <key class="preposizioni">all'</key>ombra 
 un fiore <key class="preposizioni">in</key> bocca può servire, sai 
@@ -108,5 +108,52 @@ le ombre ed i fantasmi della notte sono alberi
 e cespugli ancora in fiore 
 sono gli occhi di una donna 
 ancora piena d'amore.</text>
+	</song>
+	<song>
+		<title>Nel blu dipinto di blu</title>
+		<artist>Domenico Modugno</artist>
+		<video>https://www.youtube.com/watch?v=-UkhT0N1aiI</video>
+		<keys>articoli</keys>
+		<keys>preposizioni</keys>
+		<keys>lessico</keys>
+		<text>Penso che <key class="articoli">un</key> sogno così non ritorni mai più;
+mi dipingevo <key class="articoli">le</key> mani e <key class="articoli">la</key> faccia di blu,
+poi d’improvviso venivo dal vento rapito
+e incominciavo a volare nel cielo infinito…
+
+Volare… oh, oh!…
+Cantare… oh, oh, oh, oh!
+<key class="preposizioni">Nel</key> blu, dipinto di blu,
+felice <key class="preposizioni">di</key> stare lassù.
+E volavo, volavo felice più in alto del sole ed ancora più su,
+mentre il mondo pian piano spariva lontano laggiù,
+una musica dolce suonava soltanto per me…
+
+Volare… oh, oh!…
+Cantare… oh, oh, oh, oh!
+Nel blu, dipinto di blu,
+felice di stare lassù.
+
+Ma tutti <key class="articoli">i</key> sogni nell’alba svaniscon perché,
+quando tramonta, la <key class="lessico">luna</key> li porta con sé.
+Ma io continuo a sognare negli occhi tuoi belli,
+che sono blu come un cielo trapunto di <key class="lessico">stelle</key>.
+
+Volare… oh, oh!…
+Cantare… oh, oh, oh, oh!
+Nel blu, dipinto di blu,
+felice <key class="preposizioni">di</key> stare quaggiù.
+E continuo a volare felice più <key class="preposizioni">in</key> alto del sole ed ancora più
+su,
+mentre il mondo pian piano scompare <key class="preposizioni">negli</key> occhi tuoi blu,
+la tua voce è una <key class="lessico">musica</key> dolce che suona <key class="preposizioni">per</key> me…
+
+Volare… oh, oh!…
+Cantare… oh, oh, oh, oh!
+Nel blu, dipinto di blu,
+<key class="lessico">felice</key> di stare quaggiù.
+Nel blu degli occhi tuoi blu,
+felice di stare quaggiù,
+con te!</text>
 	</song>
 </songs>
