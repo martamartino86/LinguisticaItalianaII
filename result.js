@@ -166,9 +166,16 @@ $("document").ready(function (){
 		$(".richiesta").empty();
 		$(".richiesta").append("Ascolta la canzone, e riempi gli spazi bianchi con le preposizioni.")
 		var testoTemp = esercizioSostituzione("preposizioni");
-		$(".eser").append(testoTemp);	
+		$(".eser").append(testoTemp);
 	});
 
+	$("input:radio[id='lessico']").change(function() {
+		$(".eser").empty();
+		$(".richiesta").empty();
+		$(".richiesta").append("Trova le parole anagrammate.");
+		var testoTemp = esercizioLessico();
+		$(".eser").append(testoTemp);
+	});
 });
 
 function esercizioSostituzione(keyclass) {
@@ -187,4 +194,36 @@ function esercizioSostituzione(keyclass) {
 	}
 	testoTemp = (testoTemp).replace(/(?:\r\n|\r|\n)/g, '<br />');
 	return testoTemp;
+}
+
+function esercizioLessico() {
+	var startPos = 0;
+	var endPos   = 0;
+	testoTemp = chosenSong.text;
+	startPos = (testoTemp).indexOf("<key class=\"lessico\">");
+	while (startPos != -1) {
+		var endPos   = (testoTemp).indexOf("</key>", startPos) + 6;
+		var substr   = (testoTemp).substring(startPos, endPos);
+		console.log("substr prima: "+substr)
+		var a = substr.substring(21, substr.length - 6);
+		console.log("a: "+a)
+		testoTemp = (testoTemp).replace(substr, "<b>" + a.shuffle() + "</b>");
+		// ricomincio a cercare
+		startPos = (testoTemp).indexOf("<key class=\"lessico\">");
+	}
+	testoTemp = (testoTemp).replace(/(?:\r\n|\r|\n)/g, '<br />');
+	return testoTemp;
+}
+
+String.prototype.shuffle = function () {
+    var a = this.split(""),
+        n = a.length;
+
+    for(var i = n - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var tmp = a[i];
+        a[i] = a[j];
+        a[j] = tmp;
+    }
+    return a.join("");
 }
