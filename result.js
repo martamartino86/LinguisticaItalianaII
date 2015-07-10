@@ -169,6 +169,14 @@ $("document").ready(function (){
 		$(".eser").append(testoTemp);
 	});
 
+	$("input:radio[id='articoli']").change(function() {
+		$(".eser").empty();
+		$(".richiesta").empty();
+		$(".richiesta").append("Ascolta la canzone, e riempi gli spazi bianchi con gli articoli.")
+		var testoTemp = esercizioSostituzione("articoli");
+		$(".eser").append(testoTemp);
+	});
+
 	$("input:radio[id='lessico']").change(function() {
 		$(".eser").empty();
 		$(".richiesta").empty();

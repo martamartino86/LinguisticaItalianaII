@@ -138,15 +138,17 @@ $("document").ready(function(){
                      var id     = songstruct[pos].songs[i].id;
                      var artist = songstruct[pos].songs[i].artist;
                      var title  = songstruct[pos].songs[i].title;
+                     var keys   = songstruct[pos].songs[i].keys;
                      s = artist + " - " + title + " <br> " ;
                      var pagelink =
-                        "<a href=\"searchresults.html?id=" + id + "&artist=" + (artist.replace(/ /g,'_')) + "&title=" +  (title.replace(/ /g,'_')) + "\">" + s + "</a>";
-                     $("#results").append(pagelink);
+                        "<b><a href=\"searchresults.html?id=" + id + "&artist=" + (artist.replace(/ /g,'_')) + "&title=" +  (title.replace(/ /g,'_')) + "\">" + s + "</a></b>";
+                     var keysong = "(" + keys + ") <br>";
+                     $("#results").append(pagelink+keysong);
                   }
                }
             }
             else 
-               $("#results").append("Nessun risultato trovato.<br>");
+               $("#results").append("<i>Nessun risultato trovato per " + key + ".</i><br>");
          }
          $("#results").css("visibility","visible");
          return false;
